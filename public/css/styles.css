@@ -1,0 +1,117 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #202124; /* Cor de fundo do body */
+  color: #fff; /* Cor do texto */
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Para alinhar os painéis no topo */
+}
+
+.left-panel {
+  flex: 1; /* Para que o painel esquerdo ocupe o espaço restante */
+  padding: 20px;
+  background-color: #333; /* Cor de fundo do painel esquerdo */
+  border-right: 1px solid #555; /* Cor da borda entre os painéis */
+}
+
+.left-panel h2 {
+  margin-bottom: 20px;
+  color: #fff; /* Cor do texto no painel esquerdo */
+}
+
+form {
+  margin-bottom: 20px;
+}
+
+form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #fff; /* Cor do texto dos labels */
+}
+
+form input[type="text"],
+form input[type="email"] {
+  width: calc(100% - 22px); /* Considerando o padding e a borda */
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #555; /* Cor da borda dos inputs */
+  border-radius: 5px;
+  background-color: #444; /* Cor de fundo dos inputs */
+  color: #fff; /* Cor do texto nos inputs */
+}
+
+form button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+form button:hover {
+  background-color: #0056b3;
+}
+
+.right-panel {
+  flex: 1; /* Para que o painel direito ocupe o espaço restante */
+  padding: 20px;
+  background-color: #333; /* Cor de fundo do painel direito */
+}
+
+.right-panel h2 {
+  margin-bottom: 20px;
+  color: #fff; /* Cor do texto no painel direito */
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+table th,
+table td {
+  padding: 10px;
+  border-bottom: 1px solid #555; /* Cor da borda das células da tabela */
+  text-align: left;
+  color: #fff; /* Cor do texto nas células da tabela */
+}
+
+table th {
+  background-color: #444; /* Cor de fundo dos cabeçalhos da tabela */
+  font-weight: bold;
+}
+
+nav {
+  background-color: #333; /* Cor de fundo do menu */
+  padding: 10px 0; /* Espaçamento interno do menu */
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center; /* Alinhamento do texto no centro */
+}
+
+li {
+  display: inline-block;
+  margin-right: 20px; /* Espaçamento entre os itens do menu */
+}
+
+a {
+  text-decoration: none;
+  color: #fff; /* Cor do texto dos links */
+  padding: 5px 10px; /* Espaçamento interno dos links */
+  border-radius: 5px; /* Borda arredondada nos links */
+}
+
+a:hover {
+  background-color: #555; /* Cor de fundo dos links ao passar o mouse */
+}

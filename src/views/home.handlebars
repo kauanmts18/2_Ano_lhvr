@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="left-panel">
+    <h2>Cadastro</h2>
+    <form action="/" method="post">
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <hr />
+    <h2>Remover</h2>
+    <form action="/remover" method="post">
+      <label for="nome">Nome:</label><br />
+      <input type="text" id="nome" name="nome" /><br />
+      <label for="email">Email:</label><br />
+      <input type="email" id="email" name="email" /><br /><br />
+      <button type="submit">Remover</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>Informações Cadastradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Email</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each usuarios}}
+          <tr>
+            <td>{{this.nome}}</td>
+            <td>{{this.email}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
