@@ -81,6 +81,8 @@ Recapitulando aula anterior
 25- ir no home.handlebars e criar um form:
 
 -------------------------------------------------------------------------------
+Aula 2024-06-05
+
         
 
 
