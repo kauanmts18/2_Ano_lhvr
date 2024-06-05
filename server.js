@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(express.static(path.resolve(__dirname, "public")));
 
 // Importando as rotas
-const homeRouter = require("./src/routes/userRoutes");
+const userRouter = require("./src/routes/userRoutes");
 
 // Configuração do Handlebars
 app.engine("handlebars", exphbs.engine());
@@ -21,7 +21,7 @@ app.set("view engine", "handlebars");
 app.set("views", path.resolve(__dirname, "src", "views"));
 
 // Roteamento
-app.use("/", homeRouter);
+app.use("/", userRouter);
 
 // Iniciando o servidor
 app.listen(port, () => {
