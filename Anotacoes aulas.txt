@@ -1,0 +1,88 @@
+Aula - 23/05/2024
+Recapitulando aula anterior
+1 - Criar pasta Servidor
+2 - Dentro da pasta Servidor criar as pastas: public, src.
+3 - Dentro de src, criar as pastas: routes, views.
+4 - na pasta Servidor, fora de src criar o arquivo server.js.
+5 - Abrir o terminal na pasta
+6 - dar o comando: npm init -y, para iniciar o projeto.
+7 - comando: npm i express -> instalar express
+8 - comando: npm i express-handlebars -> para instalar o Handlebars
+9 - No arquivo server.js:
+    iniciar o servidor: 
+        const express = require("express");
+        const app = express();
+10- No arquivo server.js:
+    configurar o handlebars no sevidor:
+        app.engine("handlebars", exphbs.engine());
+        app.set("view engine", "handlebars");
+11- No arquivo server.js:
+        //Especificando os arquivos que sarao renderizados
+        app.set("views", path.resolve(__dirname, "src", "views"));//o __dirname representa o diretorio atual em que estamos. o path.resolve vaifazer o caminho na ordem onde views esta dentro dr src
+12- No arquivo server.js:
+    importar o handlebars, o path e a porta de comunicacao, logo abaixo da configuracao inicial do servidor.
+        const express = require("express");
+        const app = express();
+        const port = 3000;
+        const exphbs = require("express-handlebars");
+        const path = require("path");
+
+13- No arquivo server.js:
+    configurar o servidor par ouvir as requisições:
+    app.listen(port, () => {
+    console.log(`O servidor esta em http://localhost:${port}`);
+    });//sempre fica no final. as demais coisas ficam antes.
+14- Na pasta router:
+       criar o arquivo homeRouter.js
+
+15- no arquivo homeRouter.js:
+    importar o express:
+        const express = require("express");
+    configurar o roteador:
+        const router = express.Router();
+    
+16- no arquivo homeRouter.js:
+    configurar a rota GET:
+    router.get("/", (req, res)=> {
+        res.render("home")
+    });
+
+17- no arquivo homeRouter.js:
+    exportando a rota:
+        module.exports = router;
+18- no arquivo server.js
+    importar a rota criada:
+        const homeRouter = require("./src/routes/homeRouter");
+
+19- setar o responsavel pela rota home no servidor
+        app.use("/", homeRouter);
+
+20- na pasta views:
+        criar a pasta layouts
+21- na pasta layouts:
+        criar o arquivo: main.handlebars
+            dentro do arquivo main criar uma estrutura html
+            dentro da tag body colocar: {{{body}}}//AQUI serão renderizados os templates solicitados ex: home.handlebars
+                <body>
+                    {{{body}}}
+                </body>
+22- na pasta views:
+        criar o arquivo: home.handlebars
+        dentro do arquivo: criar um h1 "Pagina Home"
+23- no arquivo homeRouter:
+        criar rota POST
+            router.post("/", (req, res) => {
+            console.log(req.body);
+            });
+24- no arquivo server.js:
+        configurar para receber as informações dos usuarios:
+        app.use(express.urlencoded({ extended: true }));
+        app.use(express.json());
+25- ir no home.handlebars e criar um form:
+
+-------------------------------------------------------------------------------
+        
+
+
+
+
