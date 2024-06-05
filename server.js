@@ -3,7 +3,10 @@ const exphbs = require("express-handlebars");
 const app = express();
 const path = require("path");
 const port = 3000;
+//lendo as informacoes do usuario
 
+app.use(express.urlencoded({ extended: true }));
+app.use(express.json());
 //adicionando a pasta public
 app.use(express.static(path.resolve(__dirname, "public")));
 
