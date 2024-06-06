@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="left-panel">
+    <h2>Cadastro</h2>
+    <form action="/casas/" method="post">
+      <label for="rua">Rua:</label><br />
+      <input type="text" id="rua" name="rua" /><br />
+      <label for="numero">Numero:</label><br />
+      <input type="text" id="numero" name="numero" /><br /><br />
+      <label for="bairro">Bairro:</label><br />
+      <input type="text" id="bairro" name="bairro" /><br /><br />
+      <label for="municipio">Municipio:</label><br />
+      <input type="text" id="municipio" name="municipio" /><br /><br />
+      <label for="cep">CEP:</label><br />
+      <input type="text" id="cep" name="cep" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <hr />
+    <h2>Remover</h2>
+    <form action="/casas/remove/" method="post">
+      <label for="rua">Rua:</label><br />
+      <input type="text" id="rua" name="rua" /><br />
+      <label for="numero">Numero:</label><br />
+      <input type="text" id="numero" name="numero" /><br /><br />
+      <label for="bairro">Bairro:</label><br />
+      <input type="text" id="bairro" name="bairro" /><br /><br />
+      <label for="municipio">Municipio:</label><br />
+      <input type="text" id="municipio" name="municipio" /><br /><br />
+      <label for="cep">CEP:</label><br />
+      <input type="text" id="cep" name="cep" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>Informações Cadastradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Rua</th>
+          <th>Numero</th>
+          <th>Bairro</th>
+          <th>Municipio</th>
+          <th>Cep</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#each casas}}
+          <tr>
+            <td>{{this.rua}}</td>
+            <td>{{this.numero}}</td>
+            <td>{{this.bairro}}</td>
+            <td>{{this.municipio}}</td>
+            <td>{{this.cep}}</td>
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
