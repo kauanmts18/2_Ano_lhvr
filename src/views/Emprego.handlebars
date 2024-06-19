@@ -1,0 +1,49 @@
+div class="container">
+  <div class="left-panel">
+    <h2>Cadastro</h2>
+    <form action="/Emprego/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="salario">salario:</label><br />
+      <input type="text" id="salario" name="salario" /><br /><br />
+      <label for="funcao">funcao:</label><br />
+      <input type="text" id="funcao" name="funcao" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <hr />
+    <h2>Remover</h2>
+    <form action="/Emprego/remover/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="salario">salario:</label><br />
+      <input type="text" id="salario" name="salario" /><br /><br />
+      <label for="funcao">funcao:</label><br />
+      <input type="text" id="funcao" name="funcao" /><br /><br />
+      <button type="submit">Remover</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>Informações Cadastradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>salario</th>
+          <th>funcao</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {{#each Emprego}}
+          <tr>
+            <td>{{this.Nome}}</td>
+            <td>{{this.salario}}</td>
+            <td>{{this.funcao}}</td>
+            
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -13,6 +13,10 @@ app.use(express.static(path.resolve(__dirname, "public")));
 // Importando as rotas
 const userRouter = require("./src/routes/userRoutes");
 const casaRouter = require("./src/routes/casaRoutes");
+const animaisRouter = require("./src/routes/animaisRoute")
+const ProfissaoRouter = require("./src/routes/ProfissaoRoute")
+const EmpregoRouter = require("./src/routes/EmpregoRoute")
+
 
 // Configuração do Handlebars
 app.engine("handlebars", exphbs.engine());
@@ -24,6 +28,9 @@ app.set("views", path.resolve(__dirname, "src", "views"));
 // Roteamento
 app.use("/", userRouter);
 app.use("/casas", casaRouter);
+app.use("/animais", animaisRouter);
+app.use("/Profissao", ProfissaoRouter);
+app.use("/Emprego", EmpregoRouter);
 
 // Iniciando o servidor
 app.listen(port, () => {

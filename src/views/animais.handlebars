@@ -1,0 +1,49 @@
+div class="container">
+  <div class="left-panel">
+    <h2>Cadastro</h2>
+    <form action="/animais/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="Especie">Especie:</label><br />
+      <input type="text" id="Especie" name="Especie" /><br /><br />
+      <label for="Filo">Filo:</label><br />
+      <input type="text" id="Filo" name="Filo" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <hr />
+    <h2>Remover</h2>
+    <form action="/animais/remover/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="Especie">Especie:</label><br />
+      <input type="text" id="Especie" name="Especie" /><br /><br />
+      <label for="Filo">Filo:</label><br />
+      <input type="text" id="Filo" name="Filo" /><br /><br />
+      <button type="submit">Remover</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>Informações Cadastradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>Especie</th>
+          <th>Filo</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {{#each animais}}
+          <tr>
+            <td>{{this.Nome}}</td>
+            <td>{{this.Especie}}</td>
+            <td>{{this.Filo}}</td>
+            
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>

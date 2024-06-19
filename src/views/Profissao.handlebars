@@ -1,0 +1,49 @@
+div class="container">
+  <div class="left-panel">
+    <h2>Cadastro</h2>
+    <form action="/Profissao/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="espec">espec:</label><br />
+      <input type="text" id="espec" name="espec" /><br /><br />
+      <label for="exp">exp:</label><br />
+      <input type="text" id="exp" name="exp" /><br /><br />
+      <button type="submit">Cadastrar</button>
+    </form>
+    <hr />
+    <h2>Remover</h2>
+    <form action="/Profissao/remover/" method="post">
+      <label for="Nome">Nome:</label><br />
+      <input type="text" id="Nome" name="Nome" /><br />
+      <label for="espec">espec:</label><br />
+      <input type="text" id="espec" name="espec" /><br /><br />
+      <label for="exp">exp:</label><br />
+      <input type="text" id="exp" name="exp" /><br /><br />
+      <button type="submit">Remover</button>
+    </form>
+  </div>
+
+  <div class="right-panel">
+    <h2>Informações Cadastradas</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Nome</th>
+          <th>espec</th>
+          <th>exp</th>
+          
+        </tr>
+      </thead>
+      <tbody>
+        {{#each Profissao}}
+          <tr>
+            <td>{{this.Nome}}</td>
+            <td>{{this.espec}}</td>
+            <td>{{this.exp}}</td>
+            
+          </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
